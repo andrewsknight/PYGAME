@@ -1,9 +1,13 @@
 import pygame as pg
 
 pg.init()
+
 pantalla = pg.display.set_mode((600,800))
 
 game_over = False
+
+x = 300
+y= 400
 
 while not game_over:
     eventos = pg.event.get()
@@ -12,8 +16,14 @@ while not game_over:
         if evento.type == pg.QUIT:
             game_over = True
 
+    x +=1
+    y =+1
+
 
     pantalla.fill((255,0,0))
+    
+    bola= pg.draw.circle(pantalla, (255, 255, 0), (x,y), 10)
+
     
     pg.display.flip()
 
